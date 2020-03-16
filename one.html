@@ -21,12 +21,12 @@
 }
         .button1{
         height: 100;
-        width: 215;
+        width: 220;
         font-size:20px;
-        border: 2px solid black;
-        border-radius: 4px;
-        background-color: black;
-        color: yellow;
+         border: 2px solid grey;
+        border-radius: 4px; 
+        background-color:grey;
+        color:black;
         }
          #clear{
             background-color: black;
@@ -62,9 +62,10 @@
   transform: translateY(4px);
 }
         .enter{
-            position: absolute;
+            /* position: absolute;
             top: 20%;
-            left:43%
+            left:43%; */
+            color:black;
 
         }
         @keyframes example {
@@ -77,6 +78,9 @@
             
         }
         #two{
+            position:absolute;
+            top:15%;
+            left:40%;
             animation-name: example;
             animation-duration: 10s;
             animation-iteration-count: infinite;
@@ -124,12 +128,18 @@
 </script>
 
     <div class="bg"></div>
-     <div class="enter">
+     <!-- <div class="enter">
         <input class= "button1" type="text" placeholder="enter expression" id="result">
-    </div> 
+    </div>  -->
     <div class="main">
     <table border=1>
-        
+        <tr>
+            <div class="enter">
+            <td colspan=4>
+                <input class= "button1" type="text" placeholder="enter expression" id="result">
+            </td>
+        </div>
+        </tr>
         <tr>
             <td>
                 <button id="7" class="button" onclick=f(7)>7</button>
