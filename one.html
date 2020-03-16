@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        background-image: linear-gradient(to right,white, yellow);
+}
+        .button{
+        height: 50px;
+        width: 50px;
+        font-size:20px;
+        background-color: black;
+        color: yellow;
+        border-radius: 30px 30px 30px 30px;
+        }
+        .button:hover{
+  background-color: pink;
+}
+        .button1{
+        height: 100;
+        width: 215;
+        font-size:20px;
+        border: 2px solid black;
+        border-radius: 4px;
+        background-color: black;
+        color: yellow;
+        }
+         #clear{
+            background-color: black;
+        color: yellow;
+        height:50px;
+            width:100px; 
+        } 
+        .main{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translateX(-50%) translateY(-50%)
+
+        }
+        .bg{
+            background: red;
+            /* background-image: linear-gradient(#e91e63, #3f51b5); */
+            background-size: cover;
+        }
+        .new{
+            position:absolute;
+            top:75%;
+            left:47%;
+            background-color: black;
+            color: yellow;
+
+        }
+        .new:hover {background-color: black}
+
+.new:active {
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+        .enter{
+            position: absolute;
+            top: 20%;
+            left:43%
+
+        }
+        @keyframes example {
+            from {color: white;}
+            to {color: black;}
+}
+        h1{
+            text-align: center;
+            /* animation-name: example; */
+            
+        }
+        #two{
+            animation-name: example;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+        table {
+   background-color: grey;
+   border-radius: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="two"><h1><u>BASIC CALCULATOR</u></h1></div>
+    <script>
+        var res=''
+        function f(r){
+            // if(r==a){
+            //     res=res+'+';
+            //      
+            // }
+
+            res= res+r;
+            document.getElementById("result").value=res;
+            
+        };
+        function calc(){
+            var x= eval(res);
+            document.getElementById("result").value=x;
+        };
+        function clearshit(){
+            // document.getElementById("result").value=' ';
+            document.getElementById('result').value=' ' ;
+            res=''
+
+        }
+        function backspace1(){
+            var d;
+            d= res.length;
+            res= res.slice(0, d-1);
+            document.getElementById('result').value=res;
+
+        }
+
+</script>
+
+    <div class="bg"></div>
+     <div class="enter">
+        <input class= "button1" type="text" placeholder="enter expression" id="result">
+    </div> 
+    <div class="main">
+    <table border=1>
+        
+        <tr>
+            <td>
+                <button id="7" class="button" onclick=f(7)>7</button>
+            </td>
+            <td>
+                <button id="8" class="button" onclick=f(8)>8</button>
+            </td>
+            <td>
+                <button id="9" class="button" onclick=f(9)>9</button>
+            </td>
+            <td>
+                <button id= "+" class="button" onclick="f('+')">+</button>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <button id="4" class="button" onclick=f(4) >4</button>
+            </td>
+            <td>
+                <button id="5" class="button" onclick=f(5)>5</button>
+            </td>
+            <td>
+                <button id="6" class="button" onclick=f(6)>6</button>
+            </td>
+            <td>
+                <button id= "-" class="button" onclick="f('-')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="1" class="button" onclick=f(1)>1</button>
+            </td>
+            <td>
+                <button id="2" class="button" onclick=f(2)>2</button>
+            </td>
+            <td>
+                <button id="/" class="button" onclick=f(3)>3</button>
+            </td>
+            <td>
+                <button id= "*" class="button" onclick="f('*')">*</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="0" class="button" onclick=f(0) >0</button>
+            </td>
+            <td>
+                <button id="=" class="button" onclick="calc()">=</button>
+            </td>
+            <td>
+                <button id="/" class="button" onclick="f('/')">/</button>
+            </td>
+            <td>
+                <button id= "<-" class="button"  onclick="backspace1()"><-</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="new">
+            <button id="clear" onclick="clearshit()" VALUE="clear">CLEAR</button>
+</div>
+</body>
+</html>
